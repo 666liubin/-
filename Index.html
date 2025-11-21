@@ -82,12 +82,12 @@
   </head>
   <body>
     <div class="pic">
-      <img src="./1.jpg" alt="1" />
-      <img src="./2.jpg" alt="2" />
-      <img src="./3.jpg" alt="3" />
-      <img src="./4.jpg" alt="4" />
-      <img src="./5.jpg" alt="5" />
-      <img src="./6.jpg" alt="6" />
+      <img src="./photo/1.jpg" alt="1" />
+      <img src="./photo/2.jpg" alt="2" />
+      <img src="./photo/3.jpg" alt="3" />
+      <img src="./photo/4.jpg" alt="4" />
+      <img src="./photo/5.jpg" alt="5" />
+      <img src="./photo/6.jpg" alt="6" />
     </div>
     <canvas id="canvas"></canvas>
     <script>
@@ -99,7 +99,6 @@
         canvas.width = w;
         canvas.height = h;
 
-        // 修复：Math首字母大写
         let num = 200;
         let snows = [];
         for (let i = 0; i < num; i++) {
@@ -110,7 +109,6 @@
           });
         }
 
-        // 修复：语法错误
         let move = () => {
           for (let i = 0; i < num; i++) {
             let snow = snows[i];
@@ -140,7 +138,6 @@
           context.closePath();
         };
 
-        // 修复：将draw()放在move()之后
         move();
         draw();
 
@@ -149,7 +146,6 @@
           draw();
         }, 1000 / 60);
 
-        // 窗口大小调整
         window.addEventListener("resize", () => {
           w = window.innerWidth;
           h = window.innerHeight;
