@@ -39,14 +39,13 @@
         }
       }
 
+      /* 关键修改1：让图片自适应容器 */
       .pic img {
         position: absolute;
-        width: 300px;
-        height: 175px;
-        top: 50%;
-        left: 50%;
-        margin-top: -87.5px;
-        margin-left: -150px;
+        width: 100%; /* 关键：宽度100% */
+        height: 100%; /* 关键：高度100% */
+        top: 0; /* 从0开始定位 */
+        left: 0; /* 从0开始定位 */
         transform-origin: center;
       }
 
@@ -67,6 +66,14 @@
       }
       .pic img:nth-child(6) {
         transform: rotateY(300deg) translateZ(500px);
+      }
+
+      /* 手机适配媒体查询 */
+      @media (max-width: 768px) {
+        .pic {
+          width: 90vw; /* 手机上宽度90%屏幕 */
+          height: 52.5vw; /* 保持175/300≈0.583比例 */
+        }
       }
 
       #canvas {
